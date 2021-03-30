@@ -4,6 +4,7 @@
 ### Our pre-trained latent spaces use the format of ".csv" file, which is vulnerable. So please send email to "ryuliuxiaodong@gmail.com" if you need them for your application
 
 
+## import python package
 import latentspace
 
 ### initialize SharedParameters: pre-trained fastText and latent spaces
