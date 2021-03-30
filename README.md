@@ -34,7 +34,7 @@ defaultSettings = latentspace.DefaultSettings(device, sharedParameters)
 training_feature_list = []<br/>
 training_label_list = []<br/>
 for sentence1, sentence2 in MRPC_Trainig_Dataset:<br/>
-    ts=<4>feature = defaultSettings.get_features_for_PI_task(sentence1, sentence2, with_digit_count=False)<br/>
+    feature = defaultSettings.get_features_for_PI_task(sentence1, sentence2, with_digit_count=False)<br/>
     training_feature_list.append(feature)<br/>
     training_label_list.append(MRPC_Trainig_Dataset.label)<br/>
 ### Feed faetures and labels to dataloader
