@@ -14,11 +14,11 @@ non_paraphrase_latent_space_with_digitcount_file = r'directory/non_paraphrase_la
 paraphrase_latent_space_without_digitcount_file = r'directory/paraphrase_latent_space_without_digitcount.csv'<br/>
 non_paraphrase_latent_space_without_digitcount_file = r'directory/non_paraphrase_latent_space_without_digitcount.csv'<br/>
 <br/>
-sharedParameters = latentspace.SharedParameters(fastText_file, 
-                                                paraphrase_latent_space_with_digitcount_file,
-                                                non_paraphrase_latent_space_with_digitcount_file,
-                                                paraphrase_latent_space_without_digitcount_file,
-                                                non_paraphrase_latent_space_without_digitcount_file)
+sharedParameters = latentspace.SharedParameters(fastText_file,<br/> 
+                                                paraphrase_latent_space_with_digitcount_file,<br/>
+                                                non_paraphrase_latent_space_with_digitcount_file,<br/>
+                                                paraphrase_latent_space_without_digitcount_file,<br/>
+                                                non_paraphrase_latent_space_without_digitcount_file)<br/>
                                                     
                                                     
 ### computational resource
