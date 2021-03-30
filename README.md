@@ -14,11 +14,11 @@ non_paraphrase_latent_space_with_digitcount_file = r'directory/non_paraphrase_la
 paraphrase_latent_space_without_digitcount_file = r'directory/paraphrase_latent_space_without_digitcount.csv'<br/>
 non_paraphrase_latent_space_without_digitcount_file = r'directory/non_paraphrase_latent_space_without_digitcount.csv'<br/>
 <br/>
-sharedParameters = latentspace.SharedParameters(fastText_file,<br/> 
-                                                paraphrase_latent_space_with_digitcount_file,<br/>
-                                                non_paraphrase_latent_space_with_digitcount_file,<br/>
-                                                paraphrase_latent_space_without_digitcount_file,<br/>
-                                                non_paraphrase_latent_space_without_digitcount_file)<br/>
+sharedParameters = latentspace.SharedParameters(fastText_file,
+                                                paraphrase_latent_space_with_digitcount_file,
+                                                non_paraphrase_latent_space_with_digitcount_file,
+                                                paraphrase_latent_space_without_digitcount_file,
+                                                non_paraphrase_latent_space_without_digitcount_file)
                                                     
                                                     
 ### computational resource
@@ -31,12 +31,12 @@ defaultSettings = latentspace.DefaultSettings(device, sharedParameters)
 
 ### MRPC task
 ### get features for sentence pairs
-training_feature_list = []
-training_label_list = []
-for sentence1, sentence2 in MRPC_Trainig_Dataset:
-    feature = defaultSettings.get_features_for_PI_task(sentence1, sentence2, with_digit_count=False)
-    training_feature_list.append(feature)
-    training_label_list.append(MRPC_Trainig_Dataset.label)
+training_feature_list = []<br/>
+training_label_list = []<br/>
+for sentence1, sentence2 in MRPC_Trainig_Dataset:<br/>
+    feature = defaultSettings.get_features_for_PI_task(sentence1, sentence2, with_digit_count=False)<br/>
+    training_feature_list.append(feature)<br/>
+    training_label_list.append(MRPC_Trainig_Dataset.label)<br/>
 ### Feed faetures and labels to dataloader
 MRPC_Training_dataLoader = DataLoader(training_feature_list, training_label_list)
 
