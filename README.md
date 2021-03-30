@@ -2,33 +2,33 @@
 ### Concrete examples of real code are under the directory of "classifier-tuning example"
 ### latentspace.py is available under the directory of "encapsulated programming interface"
 ### Our pre-trained latent spaces use the format of ".csv" file, which is vulnerable. So please send email to "ryuliuxiaodong@gmail.com" if you need them for your application
-<br/>
-<br/>
+
+
 ## import python package
 import latentspace
-<br/>
+
 ### initialize SharedParameters: pre-trained fastText and latent spaces
 fastText_file = "directory/crawl-300d-2M-subword.vec"<br/>
 paraphrase_latent_space_with_digitcount_file = r'directory/paraphrase_latent_space_with_digitcount.csv'<br/>
 non_paraphrase_latent_space_with_digitcount_file = r'directory/non_paraphrase_latent_space_with_digitcount.csv'<br/>
 paraphrase_latent_space_without_digitcount_file = r'directory/paraphrase_latent_space_without_digitcount.csv'<br/>
 non_paraphrase_latent_space_without_digitcount_file = r'directory/non_paraphrase_latent_space_without_digitcount.csv'<br/>
-<br/>
+
 sharedParameters = latentspace.SharedParameters(fastText_file,
                                                 paraphrase_latent_space_with_digitcount_file,
                                                 non_paraphrase_latent_space_with_digitcount_file,
                                                 paraphrase_latent_space_without_digitcount_file,
                                                 non_paraphrase_latent_space_without_digitcount_file)
-<br/>                                                    
-<br/>                                                    
+                                                 
+                                               
 ### computational resource
 device = "/device:gpu:0"
-<br/>
-<br/>
+
+
 ### initialize default settings
 defaultSettings = latentspace.DefaultSettings(device, sharedParameters)
-<br/>
-<br/>
+
+
 ### MRPC task
 ### get features for sentence pairs
 training_feature_list = []<br/>
@@ -39,7 +39,7 @@ for sentence1, sentence2 in MRPC_Trainig_Dataset:<br/>
   training_label_list.append(MRPC_Trainig_Dataset.label)<br/>
 ### Feed faetures and labels to dataloader
 MRPC_Training_dataLoader = DataLoader(training_feature_list, training_label_list)
-<br/>
+
 ### Twitter-URL task
 ### detect occurence difference
 detector = latentspace.CharacteristicsDetector(Twitter-URL_sentence_pairs_list, label_list)
@@ -56,7 +56,7 @@ for sentence1, sentence2 in Twitter-URL_Trainig_Dataset:
     training_label_list.append(Twitter-URL_Trainig_Dataset.label)
 ### Feed faetures and labels to dataloader
 Twitter-URL_Training_dataLoader = DataLoader(training_feature_list, training_label_list)
-<br/>
+
 ### SICK-E task
 ### get features for sentence pairs
 training_feature_list = []
@@ -67,14 +67,14 @@ for sentence1, sentence2 in SICKE_Trainig_Dataset:
     training_label_list.append(SICKE_Trainig_Dataset.label)
 ### Feed faetures and labels to dataloader
 SICKE_Training_dataLoader = DataLoader(training_feature_list, training_label_list)
-<br/>
+
 ### Example of how to calculate cosine similarity inparaphrase/non-paraphrase latent spaces
 ### with digit-count scheme
 S1_p_latent_representation, S2_p_latent_representation = defaultSettings.get_paraphrase_latent_representations_for_sentence_pair(S1, S2)
 cosine_similarity(S1_p_latent_representation, S2_p_latent_representation)
 S1_np_latent_representation, S2_np_latent_representation = defaultSettings.get_nonparaphrase_latent_representations_for_sentence_pair(S1, S2)
 cosine_similarity(S1_np_latent_representation, S2_np_latent_representation)
-<br/>
+
 ### without digit-count scheme
 S1_p_latent_representation, S2_p_latent_representation = defaultSettings.get_paraphrase_latent_representations_for_sentence_pair(S1, S2, with_digit_count=False)
 cosine_similarity(S1_p_latent_representation, S2_p_latent_representation)
