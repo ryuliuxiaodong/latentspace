@@ -8,7 +8,7 @@
 import latentspace
 
 ### initialize SharedParameters: pre-trained fastText and latent spaces
-fastText_file = "directory/crawl-300d-2M-subword.vec"
+fastText_file = "directory/crawl-300d-2M-subword.vec"\\
 paraphrase_latent_space_with_digitcount_file = r'directory/paraphrase_latent_space_with_digitcount.csv'
 non_paraphrase_latent_space_with_digitcount_file = r'directory/non_paraphrase_latent_space_with_digitcount.csv'
 paraphrase_latent_space_without_digitcount_file = r'directory/paraphrase_latent_space_without_digitcount.csv'
