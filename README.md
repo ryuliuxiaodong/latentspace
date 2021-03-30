@@ -9,10 +9,10 @@ import latentspace
 
 ### initialize SharedParameters: pre-trained fastText and latent spaces
 fastText_file = "directory/crawl-300d-2M-subword.vec"<br/>
-paraphrase_latent_space_with_digitcount_file = r'directory/paraphrase_latent_space_with_digitcount.csv'
-non_paraphrase_latent_space_with_digitcount_file = r'directory/non_paraphrase_latent_space_with_digitcount.csv'
-paraphrase_latent_space_without_digitcount_file = r'directory/paraphrase_latent_space_without_digitcount.csv'
-non_paraphrase_latent_space_without_digitcount_file = r'directory/non_paraphrase_latent_space_without_digitcount.csv'
+paraphrase_latent_space_with_digitcount_file = r'directory/paraphrase_latent_space_with_digitcount.csv'<br/>
+non_paraphrase_latent_space_with_digitcount_file = r'directory/non_paraphrase_latent_space_with_digitcount.csv'<br/>
+paraphrase_latent_space_without_digitcount_file = r'directory/paraphrase_latent_space_without_digitcount.csv'<br/>
+non_paraphrase_latent_space_without_digitcount_file = r'directory/non_paraphrase_latent_space_without_digitcount.csv'<br/>
 sharedParameters = latentspace.SharedParameters(fastText_file, 
                                                 paraphrase_latent_space_with_digitcount_file,
                                                 non_paraphrase_latent_space_with_digitcount_file,
