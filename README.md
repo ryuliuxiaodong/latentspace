@@ -1,10 +1,9 @@
-# Here is the pseudo code about how to use our encapsulated programming interface.
-# Concrete examples of real code are under the directory of "classifier-tuning example"
-# latentspace.py is available under the directory of "encapsulated programming interface"
+### Here is the pseudo code about how to use our encapsulated programming interface.
+### Concrete examples of real code are under the directory of "classifier-tuning example"
+### latentspace.py is available under the directory of "encapsulated programming interface"
 
-###############
+###
 Our pre-trained latent spaces use the format of ".csv" file, which is vulnerable. So please send email to "ryuliuxiaodong@gmail.com" if you need them for your application
-###############
 
 
 import latentspace
