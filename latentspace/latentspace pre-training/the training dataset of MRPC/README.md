@@ -1,0 +1,1 @@
+For pre-training our latent spaces, we divide the original "msr_paraphrase_train.txt" into paraphrase/non-paraphrase files, the original MRPC file is downloadable at "https://www.microsoft.com/en-us/download/details.aspx?id=52398"
