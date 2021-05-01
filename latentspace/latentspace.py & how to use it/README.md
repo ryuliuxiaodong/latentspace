@@ -1,7 +1,1 @@
-the prerequisite Python packages required for "latentspace.py" are listed below:
-NLTK
-numpy
-tensorflow
-math
-seaborn
-matplotlib
+the prerequisite Python packages required for "latentspace.py" are NLTK, numpy, tensorflow, math, seaborn, matplotlib
