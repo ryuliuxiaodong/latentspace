@@ -13,7 +13,7 @@ class BOWTF:
         self.activation_function = lambda x: numpy.tanh(x)
 
         with tf.device("/device:gpu:0"):
-            self.sess = tf.compat.v1.Session(config=tf.compat.v1.ConfigProto(gpu_options=tf.compat.v1.GPUOptions(allow_growth=True)))
+            self.sess = tf.Session(config=tf.ConfigProto(gpu_options=tf.GPUOptions(allow_growth=True)))
 
         self.matrix = numpy.random.normal(0.0, pow(self.onodes, -0.5), (self.onodes, self.inodes)).tolist()
 
@@ -53,20 +53,18 @@ class BOWTF:
 
 
     def error_avg(self):
-        with tf.device("/gpu:0"):
-            with tf.Session() as sess:
-                error_sum_i = tf.constant([0.0 for i in range(self.onodes)])
-                error_sum = sess.run(tf.reshape(error_sum_i, [self.onodes, 1]))
-                for error in self.errors:
-                    error_sum += error
-                error_avg = error_sum / len(self.errors)
-                error_value_square = 0
-                for i in error_avg:
-                    tmp = i * i
-                    error_value_square += tmp
-                error_value = math.sqrt(error_value_square)
-                self.errors = []
-                return error_value
+        error_sum_i = tf.constant([0.0 for i in range(self.onodes)])
+        error_sum = self.sess.run(tf.reshape(error_sum_i, [self.onodes, 1]))
+        for error in self.errors:
+            error_sum += error
+        error_avg = error_sum / len(self.errors)
+        error_value_square = 0
+        for i in error_avg:
+            tmp = i * i
+            error_value_square += tmp
+        error_value = math.sqrt(error_value_square)
+        self.errors = []
+        return error_value
 
 
 
